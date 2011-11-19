@@ -2,6 +2,7 @@
 #include<string>
 using namespace std;
 
+//Note printing combinations of a string is exactly same as printing all non-empty subsets of a string.
 void recSubset(string soFar, string rest)
 {
 	if(rest == "") cout<<soFar<<endl;
