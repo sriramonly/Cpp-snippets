@@ -36,7 +36,7 @@ int main()
 {
 	priority_queue< std::pair<int,int >,vector<pair<int,int> >, comparator > q;//Note: vector<> here denotes what container will be used to store the priority queue, so must mention vector here in declaration of queue. 
 
-	bool visited[sizeof(A)/sizeof(int)][sizeof(B)/sizeof(int)] = {false} ;//needed because indices pair get repeated
+	bool visited[sizeof(A)/sizeof(int)][sizeof(B)/sizeof(int)] = {false} ;//needed because indices pair get repeated when we insert (i+1,j) and (i,j+1)
 	q.push(make_pair(0,0));
 	while(!q.empty())
 	{
