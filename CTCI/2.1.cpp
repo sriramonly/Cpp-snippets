@@ -60,23 +60,21 @@ void removeDuplicatesUsingHashing(node * head)
 	node *first = head, *second = head->next;
 	if(second->next == NULL)
 		return ; //only one node
-	mp[second->data] = 1;
+	mp[first->data] = 1;
 	while(second != NULL)
 	{
 		if(mp[second->data] == 0)
-			mp[second->data] = 1; 
+		{
+			mp[second->data] = 1;
+			first = second; 
+			second = second->next; 
+		}
 		else 
 		{
 			first->next = second->next;
-			delete(second);
+			delete second;
 			second = first->next;
-			continue;
 		}
-		first = first->next;
-		if(first) 
-			second = first->next;
-		else
-			second = NULL;
 	}
 }
 
@@ -85,7 +83,7 @@ void removeDuplicates(node * &head)
 	if(head == NULL || head->next == NULL)
 		return;
 	node * first = head;
-	while(first->next != NULL)
+	while(first != NULL && first->next != NULL)
 	{
 		node * second = first , * third = second->next;
 		while(third != NULL)
@@ -108,11 +106,11 @@ void removeDuplicates(node * &head)
 int main()
 {
 	node * head = NULL;
-	insert(head, 1);
+	insert(head, 4);
+	insert(head, 6);
+	insert(head, 3);
 	insert(head, 4);
 	insert(head, 4);
-	insert(head, 2);
-	insert(head, 1);
 	printList(head);
 	removeDuplicatesUsingHashing(head);
 	printList(head);
