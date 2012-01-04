@@ -1,18 +1,11 @@
 /*
  * =====================================================================================
- *
  *       Filename:  2.5.cpp
- *
  *    Description:  prblm 2.5
- *
  *        Version:  1.0
  *        Created:  12/28/2011 05:44:05 PM
- *       Revision:  none
  *       Compiler:  gcc
- *
  *         Author:  Kumar Abhishek (), kr.abhish@gmail.com
- *        Company:  
- *
  * =====================================================================================
  */
 #include<iostream>
