@@ -80,6 +80,7 @@ void RecursiveReverse(struct node** headRef) {
 	first->next = NULL; // (tricky step -- make a drawing)
 	*headRef = rest; // fix the head pointer
 	cout<<"rest: "<<rest->data<<" " ; //note this line://rest is being passed to head as a reference pointer so its value keeps changing, and when going back withinrecursive calls , its value does not get changed and remains at the tail of the original linked list. !!!!IMPORTANT !!!!!!remember this./
+	//NOTE:head and rest are basically pointing to same location because of the rest being passed as reference. So, once rest is at last node, it does not get modified back in while going back in recursive calls.
 }
 
 int main()
