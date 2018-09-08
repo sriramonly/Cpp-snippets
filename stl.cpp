@@ -52,3 +52,55 @@ __builtin_clz(16) //= 27 : This function returns number of leading 0-bits of x w
 set<int> s = {8, 2, 3, 1};
 for (auto it: s)
     cout << it << ' ';  
+
+// Vector of 20 "Unknown" strings
+vector< string > names(20, “Unknown”);
+//matrix of size mxn filled with -1
+vector< vector< int > > Matrix(m, vector< int >(n, -1));
+
+// insert an item after the first
+v.insert(1, 42); // Insert value 42 after the first
+
+vector< int > X; 
+sort(X.begin(), X.end()); // Sort array in ascending order
+sort(X.rbegin(), X.rend()); // Sort arry in descending order using with reverse iterators
+
+int data[5] = { 1, 5, 2, 4, 3 };
+vector< int > X(data, data+5);
+int v1 = *max_element(X.begin(), X.end()); // Returns value of max element in vector
+int i1 = min_element(X.begin(), X.end()) – X.begin; // Returns index of min element in vector
+
+
+
+
+void some_function(vector< int > v) { // Never do it : creates a copy of v
+// ...
+}
+// Use this instead:
+ void some_function(const vector< int >& v) { // OK: if changing v in some way, remove const
+// ...
+}
+
+// string stream
+void f(const string& s) { 
+  // Construct an object to parse strings
+  istringstream is(s); 
+  // Vector to store data
+  vector< int > v; 
+  // Read integer while possible and add it to the vector
+  int tmp;
+  while(is >> tmp) {
+    v.push_back(tmp);
+  }
+}
+
+// using next_permutation
+do {
+  Solve(..., v);
+} while(next_permutation(v.begin(), v.end());
+
+      
+// set from array 
+int data[5] = { 5, 1, 4, 2, 3 };
+set< int > S(data, data+5);
+set< int > s(v.begin(), v.end()); 
