@@ -104,3 +104,61 @@ do {
 int data[5] = { 5, 1, 4, 2, 3 };
 set< int > S(data, data+5);
 set< int > s(v.begin(), v.end()); 
+
+        
+// From my notes
+//Convert string to uppercase:
+transform(su.begin(), su.end(), su.begin(), ::toupper);
+
+//Check if a character is punctuation mark:
+int ispunct( int ch );
+Checks if the given character is a punctuation character as classified by the current C locale. The default C locale classifies the characters !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ as punctuation.
+The behavior is undefined if the value of ch is not representable as unsigned char and is not equal to EOF.
+Return value: Non-zero value if the character is a punctuation character, zero otherwise.
+//CHeck if character is alphanumeric i.e. letter or number
+isalnum
+//To modify characters in a string p, use this: 
+for (auto & c: p) c = isalpha(c) ? tolower(c) : ' '; 
+
+//Area of a triangle (a Leetcode question):
+double area(int x1, int y1, int x2, int y2, int x3, int y3) {
+return abs(0.5*(x1*(y2-y3) + x2*(y3-y1) + x3*(y1-y2))); }
+
+//Sum of a vector of ints: use accumulate():
+accumulate(v.begin(), v.begin()+int(v.size()/2), 0) // sum of first half of vector
+//String to integer:
+std::stoi( str )
+
+//priority queue by default stored numbers in decreasing order. To use increasing order, initialize this way:
+std::priority_queue<int, std::vector<int>, std::greater<int> > my_min_heap;
+Remove leading zeros from a string of integers:
+std::string str = "0000000057"; 
+str.erase(0, str.find_first_not_of('0')); //useful
+assert(str == "57");
+//**Split a string by a char**
+vector<string> split(const string& s, char c) {
+vector<string> v;
+stringstream ss(s);
+string x;
+while (getline(ss, x, c))
+v.push_back(x); 
+return v; //this line is not needed 
+}
+//**Tokenizing the scanned line**
+using stringstream class would help tokenize the string.
+use the following::
+#include<sstream> 
+stringstream SS;
+string s,s1; 
+getline(cin, s); 
+SS << s; 
+do{ 
+s1.erase(); // to remove all characters from s1. SS >> s1; cout << s1 << endl; 
+} while(SS); 
+SS.str(""); // to reuse the stringstream object.
+C++ policy based data structure : [Read here](https://codeforces.com/blog/entry/11080) to find order k-th largest element  &  number of items in a set that are strictly smaller than an item in O(log n) time.
+//Reserve size of a vector after declaring:
+std::vector<int> vec1; vec1.**reserve**(30); // Allocate space for 30 items, but vec1 is still empty. 
+std::vector<int> vec2; vec2.**resize**(30); // Allocate space for 30 items, and vec2 now contains 30 items.
+
+      
