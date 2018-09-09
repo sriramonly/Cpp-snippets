@@ -169,3 +169,26 @@ for(auto i: mp) { cout<<i.first<<" " << i.second};
 for(map<int, vector<int>>::reverse_iterator it=bucket.rbegin(); it!=bucket.rend();it--) {..}
 
                                               
+// List splicing
+list<pair<int, int>> used;                                              
+used.splice(used.begin(), used, cache[key]); // lru cache q
+
+std::list<int> list1 = { 1, 2, 3, 4, 5 };
+std::list<int> list2 = { 10, 20, 30, 40, 50 };
+
+auto it = list1.begin();
+std::advance(it, 2);
+
+list1.splice(it, list2);
+std::cout << "list1: " << list1 << "\n";
+std::cout << "list2: " << list2 << "\n";
+
+list2.splice(list2.begin(), list1, it, list1.end());
+std::cout << "list1: " << list1 << "\n";
+std::cout << "list2: " << list2 << "\n";                                              
+/*output
+list1:  1 2 10 20 30 40 50 3 4 5
+list2: 
+list1:  1 2 10 20 30 40 50
+list2:  3 4 5 */                                             
+                                             
