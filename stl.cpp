@@ -140,9 +140,22 @@ std::random_shuffle(v.begin(), v.end());
 //binary_search()
 //Determine whether item is in vector (returns bool):
 std::cout << binary_search(v.begin(), v.end(), 'c') << std::endl;        
+
 //String to integer:
-std::stoi( str )
+std::stoi( str );
+//Integer to string
+to_string(i);//i is int
+
+//Convert an string to an int
+// first convert the string to a const char*
+const char *c = s.c_str();
+// then convert the char* to an int
+int i = std::atoi(c);
+// or do both steps at once
+int i = std::atoi(s.c_str());
+
         
+     
 //for_each()
 //Apply myfunction() to each member of the vector:
 void myfunction(char c) {
@@ -150,6 +163,10 @@ void myfunction(char c) {
 }
 std::for_each(v.begin(), v.end(), myfunction);        
 
+//replace()
+//Replace occurrences of 'a' with 'd' in the vector:
+std::replace(v.begin(), v.end(), 'a', 'd');
+        
 //priority queue by default stored numbers in decreasing order. To use increasing order, initialize this way:
 std::priority_queue<int, std::vector<int>, std::greater<int> > my_min_heap;
 //Remove leading zeros from a string of integers:
