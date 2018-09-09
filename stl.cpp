@@ -37,6 +37,7 @@ cout << f(1, 2); // prints "3"
 
 pair<int, int> p;
 vector<int> v;
+std::count(v.begin(), v.end(), 1);
 p = {3, 4}; // insert into pair 
 v = {4, 5}; // insert into vector
 pair<int, pair<char, long long> > p;
