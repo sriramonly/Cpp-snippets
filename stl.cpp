@@ -125,10 +125,30 @@ for (auto & c: p) c = isalpha(c) ? tolower(c) : ' ';
 double area(int x1, int y1, int x2, int y2, int x3, int y3) {
 return abs(0.5*(x1*(y2-y3) + x2*(y3-y1) + x3*(y1-y2))); }
 
+//Algorithms
 //Sum of a vector of ints: use accumulate():
 accumulate(v.begin(), v.begin()+int(v.size()/2), 0) // sum of first half of vector
+
+//random_shuffle()
+Shuffle the elements in the vector:
+#include <ctime>
+// seed the random number generator (required)
+std::srand (unsigned (std::time(0)));
+std::random_shuffle(v.begin(), v.end());
+
+
+//binary_search()
+//Determine whether item is in vector (returns bool):
+std::cout << binary_search(v.begin(), v.end(), 'c') << std::endl;        
 //String to integer:
 std::stoi( str )
+        
+//for_each()
+//Apply myfunction() to each member of the vector:
+void myfunction(char c) {
+    std::cout << c << std::endl;
+}
+std::for_each(v.begin(), v.end(), myfunction);        
 
 //priority queue by default stored numbers in decreasing order. To use increasing order, initialize this way:
 std::priority_queue<int, std::vector<int>, std::greater<int> > my_min_heap;
