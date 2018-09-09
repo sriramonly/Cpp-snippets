@@ -112,9 +112,9 @@ transform(su.begin(), su.end(), su.begin(), ::toupper);
 
 //Check if a character is punctuation mark:
 int ispunct( int ch );
-Checks if the given character is a punctuation character as classified by the current C locale. The default C locale classifies the characters !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ as punctuation.
-The behavior is undefined if the value of ch is not representable as unsigned char and is not equal to EOF.
-Return value: Non-zero value if the character is a punctuation character, zero otherwise.
+//Checks if the given character is a punctuation character as classified by the current C locale. The default C locale classifies the characters !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ as punctuation.
+//The behavior is undefined if the value of ch is not representable as unsigned char and is not equal to EOF.
+//Return value: Non-zero value if the character is a punctuation character, zero otherwise.
 //CHeck if character is alphanumeric i.e. letter or number
 isalnum
 //To modify characters in a string p, use this: 
@@ -131,7 +131,7 @@ std::stoi( str )
 
 //priority queue by default stored numbers in decreasing order. To use increasing order, initialize this way:
 std::priority_queue<int, std::vector<int>, std::greater<int> > my_min_heap;
-Remove leading zeros from a string of integers:
+//Remove leading zeros from a string of integers:
 std::string str = "0000000057"; 
 str.erase(0, str.find_first_not_of('0')); //useful
 assert(str == "57");
