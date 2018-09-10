@@ -136,7 +136,20 @@ Shuffle the elements in the vector:
 std::srand (unsigned (std::time(0)));
 std::random_shuffle(v.begin(), v.end());
 
-
+//sort vector of structs/objects with custom comparator
+ struct Interval {
+      int start;
+      int end;
+      Interval() : start(0), end(0) {}
+      Interval(int s, int e) : start(s), end(e) {}
+ };
+vector<Interval> intervals;        
+bool comparator(Interval i, Interval j) {
+    return i.start <= j.start;
+}        
+sort(intervals.begin(), intervals.end(), comparator);
+        
+        
 //binary_search()
 //Determine whether item is in vector (returns bool):
 std::cout << binary_search(v.begin(), v.end(), 'c') << std::endl;        
