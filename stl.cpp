@@ -58,6 +58,7 @@ set<int>::iterator itlow,itup;
 for (int i=1; i<10; i++) myset.insert(i*10); // 10 20 30 40 50 60 70 80 90
 itlow=myset.lower_bound (30);                //       ^
 itup=myset.upper_bound (60);                 //                   ^
+// set lower_bound: An iterator to the the first element in the container which is not considered to go before val, or set::end if all elements are considered to go before val.
 
 
 // Vector of 20 "Unknown" strings
