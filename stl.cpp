@@ -53,6 +53,12 @@ __builtin_clz(16) //= 27 : This function returns number of leading 0-bits of x w
 set<int> s = {8, 2, 3, 1};
 for (auto it: s)
     cout << it << ' ';  
+set<int> myset;
+set<int>::iterator itlow,itup;
+for (int i=1; i<10; i++) myset.insert(i*10); // 10 20 30 40 50 60 70 80 90
+itlow=myset.lower_bound (30);                //       ^
+itup=myset.upper_bound (60);                 //                   ^
+
 
 // Vector of 20 "Unknown" strings
 vector< string > names(20, “Unknown”);
