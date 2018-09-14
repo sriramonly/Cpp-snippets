@@ -250,3 +250,23 @@ list2:
 list1:  1 2 10 20 30 40 50
 list2:  3 4 5 */                                             
                                              
+// How to have a class member as a reference.(initializing it later in constructor)
+class MyClass { 
+    vector<int>& vec; 
+  
+public: 
+    // this is the right way to assign 
+    // the reference of stl container 
+    MyClass(vector<int>& arr) 
+        : vec(arr) 
+    { 
+    } 
+    void print() 
+    { 
+        /// print the value of vector 
+        for (int i = 0; i < vec.size(); i++) 
+            cout << vec[i] << " "; 
+    } 
+}; 
+  
+                                              /
