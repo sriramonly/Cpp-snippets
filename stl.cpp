@@ -273,4 +273,25 @@ public:
     } 
 }; 
   
-                                              /
+//TrieNode data structure
+class TrieNode {
+public:
+    TrieNode* children[26]={}; //<<<<<------ {} is crutial otherwise you will get seg fault
+    bool isWord=false;
+    TrieNode() {
+    }
+};
+                                              
+//OR
+class TrieNode { 
+public:
+  TrieNode* children[26]={};
+  bool isEndWord=false;
+  TrieNode() {
+    //fill(children, children+26, nullptr);
+  }
+};
+                                           
+
+                                              
+                                              
