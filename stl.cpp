@@ -66,6 +66,10 @@ vector< string > names(20, “Unknown”);
 //matrix of size mxn filled with -1
 vector< vector< int > > Matrix(m, vector< int >(n, -1));
 
+//initialize all members of an array with something.
+int directory[100];
+std::fill(directory, directory + 100, -1);
+
 // insert an item after the first
 v.insert(1, 42); // Insert value 42 after the first
 
