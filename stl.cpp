@@ -292,6 +292,14 @@ public:
   }
 };
                                            
-
+//Graph adjacency list 
+vector<vector<int>> g(n);
+  g[0].push_back(1);g[0].push_back(2);
+  g[1].push_back(2);
+  for(int i=0;i<3;i++) {
+      for(int j: g[i]) {
+          cout<<i<< ": "<<j<<endl;
+      }
+  }
                                               
                                               
