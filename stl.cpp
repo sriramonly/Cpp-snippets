@@ -218,10 +218,12 @@ do{
 s1.erase(); // to remove all characters from s1. SS >> s1; cout << s1 << endl; 
 } while(SS); 
 SS.str(""); // to reuse the stringstream object.
-C++ policy based data structure : [Read here](https://codeforces.com/blog/entry/11080) to find order k-th largest element  &  number of items in a set that are strictly smaller than an item in O(log n) time.
+
+//C++ policy based data structure : [Read here](https://codeforces.com/blog/entry/11080) to find order k-th largest element  &  number of items in a set that are strictly smaller than an item in O(log n) time.
+
 //Reserve size of a vector after declaring:
-std::vector<int> vec1; vec1.**reserve**(30); // Allocate space for 30 items, but vec1 is still empty. 
-std::vector<int> vec2; vec2.**resize**(30); // Allocate space for 30 items, and vec2 now contains 30 items.
+std::vector<int> vec1; vec1.reserve(30); // Allocate space for 30 items, but vec1 is still empty. 
+std::vector<int> vec2; vec2.resize(30); // Allocate space for 30 items, and vec2 now contains 30 items.
 
 //iterating a map c++11
 unordered_map<int, int>mp;                                              
