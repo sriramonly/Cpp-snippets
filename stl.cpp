@@ -285,10 +285,10 @@ public:
 //OR
 class TrieNode { 
 public:
-  TrieNode* children[26]={};
+  TrieNode* children[26];
   bool isEndWord=false;
   TrieNode() {
-    //fill(children, children+26, nullptr);
+    fill(children, children+26, nullptr);
   }
 };
                                            
