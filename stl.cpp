@@ -308,5 +308,5 @@ std::bitset<8> b;
 for (size_t i = 1; i < b.size(); i += 2) {
     b.set(i);
 }
-std::cout << b << '\n';
-//Output: 10101010
+std::cout << b << " "<< b.to_ulong()<<'\n';
+//Output: 10101010 170
