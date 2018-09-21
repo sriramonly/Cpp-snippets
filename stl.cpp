@@ -60,6 +60,8 @@ itlow=myset.lower_bound (30);                //       ^
 itup=myset.upper_bound (60);                 //                   ^
 // set lower_bound: An iterator to the the first element in the container which is not considered to go before val, or set::end if all elements are considered to go before val.
 
+//vector initialization using static list of ints
+vector<int> vect1{ 10, 20, 30 }; 
 
 // Vector of 20 "Unknown" strings
 vector< string > names(20, “Unknown”);
