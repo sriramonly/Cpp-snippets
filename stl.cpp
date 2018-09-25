@@ -314,7 +314,7 @@ vector<vector<int>> g(n);
 //bitset, use this for storing bits and related operations
 std::bitset<8> b;
 for (size_t i = 1; i < b.size(); i += 2) {
-    b.set(i);
+    b.set(i); // similarly we have reset(), flip()
 }
-std::cout << b << " "<< b.to_ulong()<<'\n';
+std::cout << b << " "<< b.to_ulong()<<'\n'; // similarly we have to_string() etc.
 //Output: 10101010 170
