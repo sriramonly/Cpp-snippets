@@ -15,6 +15,10 @@ mp.reserve(1024);
 mp.max_load_factor(0.25);
 //With above two lines unordered_map become about 10 times faster.
 
+//sorting an unordered map by key/value.
+// Either put keys into a vector then sort
+// Or put the key/value pairs into a multimap/map/set(only key/value for set)
+
 // tie: Creates a tuple of lvalue references to its arguments or instances of std::ignore.
 // std::tie can be used to unpack a tuple:
 int a,b,c;
