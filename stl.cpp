@@ -126,7 +126,7 @@ set< int > s(v.begin(), v.end());
         
 // From my notes
 //Convert string to uppercase:
-transform(su.begin(), su.end(), su.begin(), ::toupper);
+transform(su.begin(), su.end(), su.begin(), ::toupper); // toupper from C namespace and not from std namespace, hence ::
 
 //Check if a character is punctuation mark:
 int ispunct( int ch );
