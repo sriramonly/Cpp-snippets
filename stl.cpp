@@ -138,7 +138,9 @@ int ispunct( int ch );
 isalnum
 //To modify characters in a string p, use this: 
 for (auto & c: p) c = isalpha(c) ? tolower(c) : ' '; 
-
+//convert a char to string
+string s(1, 'c');        
+        
 //Area of a triangle (a Leetcode question):
 double area(int x1, int y1, int x2, int y2, int x3, int y3) {
 return abs(0.5*(x1*(y2-y3) + x2*(y3-y1) + x3*(y1-y2))); }
