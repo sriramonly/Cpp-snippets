@@ -16,7 +16,10 @@ mp.max_load_factor(0.25);
 //With above two lines unordered_map become about 10 times faster.
 
 //sorting an unordered map by key/value.
-// Either put keys into a vector then sort
+// Either put keys into a vector then sort, for example:
+unordered_map<char, int> table;
+table['b']=2, table['c']=3, table['a'] = 1;
+vector<pair<char, int>> v(table.begin(), table.end());    
 // Or put the key/value pairs into a multimap/map/set(only key/value for set)
 
 // tie: Creates a tuple of lvalue references to its arguments or instances of std::ignore.
@@ -87,8 +90,6 @@ int data[5] = { 1, 5, 2, 4, 3 };
 vector< int > X(data, data+5);
 int v1 = *max_element(X.begin(), X.end()); // Returns value of max element in vector
 int i1 = min_element(X.begin(), X.end()) – X.begin; // Returns index of min element in vector
-
-
 
 
 void some_function(vector< int > v) { // Never do it : creates a copy of v
@@ -205,23 +206,24 @@ str.erase(0, str.find_first_not_of('0')); //useful
 assert(str == "57");
 //**Split a string by a char**
 vector<string> split(const string& s, char c) {
-vector<string> v;
-stringstream ss(s);
-string x;
-while (getline(ss, x, c))
-v.push_back(x); 
-return v; //this line is not needed 
+  vector<string> v;
+  stringstream ss(s);
+  string x;
+  while (getline(ss, x, c))
+    v.push_back(x); 
+  return v; //this line is not needed 
 }
+
 //**Tokenizing the scanned line**
-using stringstream class would help tokenize the string.
-use the following::
+//using stringstream class would help tokenize the string.
+//use the following::
 #include<sstream> 
 stringstream SS;
 string s,s1; 
 getline(cin, s); 
 SS << s; 
 do{ 
-s1.erase(); // to remove all characters from s1. SS >> s1; cout << s1 << endl; 
+  s1.erase(); // to remove all characters from s1. SS >> s1; cout << s1 << endl; 
 } while(SS); 
 SS.str(""); // to reuse the stringstream object.
 
