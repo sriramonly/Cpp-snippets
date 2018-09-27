@@ -16,7 +16,7 @@ void init(int n) {
 }
 
 int root(int x) {
-    return x == p[x] ? x : (p[x] = root(p[x])); // path compression
+    return x == p[x] ? x : (p[x] = root(p[x])); // path compression, finally returns the root of x using assignment operator.
 }
 
 void unite(int a, int b) {
