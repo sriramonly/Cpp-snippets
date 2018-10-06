@@ -1,23 +1,14 @@
-    bool regx_match_rec(const string& text, const string& pattern, int i, int j) {
-        if (pattern.length() == j) {
-            if (text.length() == i)
-                return true;
-            else
-                return false;
-        }
-
-        if (j < pattern.length() - 1 && pattern[j + 1] == '*') {
-            for (int k = i; k <= text.length(); ++k) {
-                if (regx_match_rec(text, pattern, k, j + 2))
-                    return true;
-                if (pattern[j] != '.' && text[k] != pattern[j])
-                    return false;
-            }
-        }
-        else if (i < text.length() && j < pattern.length() && (pattern[j] == '.' || pattern[j] == text[i])) {
-                return regx_match_rec(text, pattern, i + 1, j + 1);
-        }
-
-        return false;
+// Recursive
+bool isMatchRec(string s, string p, int i, int j){
+    if(j>=p.size()) {
+        if(i==s.size()) return true;
+        else return false;
     }
-        
+    bool firstMatch = (i<s.size()) && ((s[i]==p[j])|| (p[j] == '.'));
+    if(j+1<p.size() && p[j+1] == '*') {
+        return isMatchRec(s, p, i, j+2) || (firstMatch && isMatchRec(s, p, i+1, j));
+    }
+    else {
+        return firstMatch && isMatchRec(s, p, i+1, j+1);
+    }
+}
