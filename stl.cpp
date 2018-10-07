@@ -71,9 +71,9 @@ itup=myset.upper_bound (60);                 //                   ^
 vector<int> vect1{ 10, 20, 30 }; 
 
 // Vector of 20 "Unknown" strings
-vector< string > names(20, “Unknown”);
+vector<string> names(20, “Unknown”);
 //matrix of size mxn filled with -1
-vector< vector< int > > Matrix(m, vector< int >(n, -1));
+vector<vector<int>> Matrix(m, vector<int>(n, -1));
 
 //initialize all members of an array with something.
 int directory[100];
