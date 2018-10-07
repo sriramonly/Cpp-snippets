@@ -241,6 +241,9 @@ for(auto i: mp) { cout<<i.first<<" " << i.second};
                                               
 //iterating a map in reverse order                                              
 for(map<int, vector<int>>::reverse_iterator it=bucket.rbegin(); it!=bucket.rend();it--) {..}
+//find last key in a map?
+map.rbegin()->first;
+        
 
                                               
 // List splicing
