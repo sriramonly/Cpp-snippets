@@ -10,7 +10,6 @@ public:
     
     int get(int key) {
         if(cache.find(key) == cache.end()) return -1;
-        //list<pair<int, int>>::iterator it = cache.find(key);
         used.splice(used.begin(), used, cache[key]);
         return cache[key]->second;
     }
