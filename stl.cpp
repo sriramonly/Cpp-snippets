@@ -168,6 +168,8 @@ bool comparator(Interval i, Interval j) {
     return i.start <= j.start;
 }        
 sort(intervals.begin(), intervals.end(), comparator);
+auto it = lower_bound(intervals.begin(), intervals.end(), newInterval, compare); // O(log n) if sorted vector
+auto it = binary_search(intervals.begin(), intervals.end(), newInterval, compare); // O(log n) if sorted vector        
         
         
 //binary_search()
