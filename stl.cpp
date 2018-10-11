@@ -91,6 +91,9 @@ vector< int > X(data, data+5);
 int v1 = *max_element(X.begin(), X.end()); // Returns value of max element in vector
 int i1 = min_element(X.begin(), X.end()) – X.begin; // Returns index of min element in vector
 
+auto result = std::minmax_element(X.begin(), X.end()); // returns pair<min iterator,max iterator>
+std::cout << "min element at: " << (result.first - X.begin()) << '\n'; // prints 0 
+std::cout << "max element at: " << (result.second - X.begin()) << '\n';// prints 1
 
 void some_function(vector< int > v) { // Never do it : creates a copy of v
 // ...
