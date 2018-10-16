@@ -31,6 +31,10 @@ tuple<int, int, int, char> t (3, 4, 5, 'g');
 int a, b;
 tie(b, ignore, a, ignore) = t; // use ignore to ignore a value
 cout << a << ' ' << b << '\n'; // prints 5 3
+auto t = std::make_tuple(1, "Foo", 3.14);
+// how to access elements within a tuple(useful)
+// prints: (1, Foo, 3.14)
+std::cout << "(" << std::get<0>(t) << ", " << std::get<1>(t) << ", " << std::get<2>(t) << ")\n";
 
 
 // lambdas
