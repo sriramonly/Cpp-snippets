@@ -26,7 +26,7 @@ void traversal_trick(node *root) {
         if(cur == NULL or state == 3) continue;
         
         S.push({cur, state+1});
-        
+        //change ordering of below to get other traversals: pre/post
         if (state == 0) S.push({cur->left, 0});
         else if (state == 1) cout << cur->val << " " ;
         else if (state == 2) S.push({cur->right, 0});
