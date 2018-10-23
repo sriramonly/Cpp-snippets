@@ -211,6 +211,17 @@ std::replace(v.begin(), v.end(), 'a', 'd');
         
 //priority queue by default stored numbers in decreasing order. To use increasing order, initialize this way:
 std::priority_queue<int, std::vector<int>, std::greater<int> > my_min_heap;
+       
+// Merge k sorted linked lists.
+// Note need to have a class Compare with operator() defined in it
+class Compare {
+    public:
+    bool operator()(ListNode* n1, ListNode* n2) {
+        return n1->val > n2->val;
+    }
+};        
+priority_queue<ListNode*, vector<ListNode*>, Compare>pq;
+        
 //Remove leading zeros from a string of integers:
 std::string str = "0000000057"; 
 str.erase(0, str.find_first_not_of('0')); //useful
