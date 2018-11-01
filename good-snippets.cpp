@@ -36,3 +36,13 @@ void moveZeroes(vector<int>& nums) {
         }
         return stk1.empty() and stk2.empty();
     }
+
+    vector<int> shuffle() {
+         int i,j;
+         vector<int> arr;
+         for (i = arr.size() - 1; i > 0; i--) {
+            j = rand() % (i + 1);
+            swap(arr[i], arr[j]);
+         }
+         return arr;    
+    }
