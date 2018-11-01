@@ -86,7 +86,7 @@ int directory[100];
 std::fill(directory, directory + 100, -1);
 
 // insert an item after the first
-v.insert(1, 42); // Insert value 42 after the first
+v.insert(v.begin()+1, 42); // Insert value 42 after the first
 
 vector< int > X; 
 sort(X.begin(), X.end()); // Sort array in ascending order
