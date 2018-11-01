@@ -16,3 +16,23 @@ void moveZeroes(vector<int>& nums) {
             }
         }
 }
+
+// check if leaf value sequence(from left to right) of two different trees is the same
+    int dfs(stack<TreeNode*> &stk) {
+        while(true){
+            TreeNode* node = stk.top();
+            stk.pop();           
+            if(node->right) stk.push(node->right);
+            if(node->left) stk.push(node->left);
+            if(!node->left and !node->right) return node->val;
+        }
+    }
+    bool leafSimilar(TreeNode* root1, TreeNode* root2) {
+        stack<TreeNode*> stk1, stk2;
+        stk1.push(root1);
+        stk2.push(root2);
+        while(!stk1.empty() and !stk2.empty()){
+            if(dfs(stk1) != dfs(stk2)) return false;
+        }
+        return stk1.empty() and stk2.empty();
+    }
