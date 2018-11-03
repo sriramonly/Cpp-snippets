@@ -27,7 +27,7 @@ void moveZeroes(vector<int>& nums) {
             if(!node->left and !node->right) return node->val;
         }
     }
-    bool leafSimilar(TreeNode* root1, TreeNode* root2) {
+bool leafSimilar(TreeNode* root1, TreeNode* root2) {
         stack<TreeNode*> stk1, stk2;
         stk1.push(root1);
         stk2.push(root2);
@@ -35,8 +35,10 @@ void moveZeroes(vector<int>& nums) {
             if(dfs(stk1) != dfs(stk2)) return false;
         }
         return stk1.empty() and stk2.empty();
-    }
+}
 
+
+    // shuffle an array
     vector<int> shuffle() {
          int i,j;
          vector<int> arr;
@@ -45,4 +47,15 @@ void moveZeroes(vector<int>& nums) {
             swap(arr[i], arr[j]);
          }
          return arr;    
+    }
+
+
+    // Max path sum in a binary tree: any node to any node
+    // s -> INT_MIN to begin with
+    int dfs(TreeNode* root, int &s) {
+        if(!root) return 0;
+        int ls = max(0,dfs(root->left, s));
+        int rs = max(0, dfs(root->right, s));
+        s = max(s, ls+rs+root->val);
+        return max(ls, rs)+root->val;
     }
