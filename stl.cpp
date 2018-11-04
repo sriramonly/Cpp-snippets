@@ -15,6 +15,10 @@ mp.reserve(1024);
 mp.max_load_factor(0.25);
 //With above two lines unordered_map become about 10 times faster.
 
+//insert into a multimap : CANNOT use [] for insert 
+std::multimap<int, std::string, std::greater<int>> mmap {{2, "foo"}, {2, "bar"}, {3, "baz"}, {1, "abc"}, {5, "def"}};
+mmap.insert(std::make_pair(6, "uvw"));
+
 //sorting an unordered map by key/value.
 // Either put keys into a vector then sort, for example:
 unordered_map<char, int> table;
