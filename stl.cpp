@@ -71,6 +71,8 @@ itlow=myset.lower_bound (30);                //       ^
 itup=myset.upper_bound (60);                 //                   ^
 // set lower_bound: An iterator to the the first element in the container which is not considered to go before val, or set::end if all elements are considered to go before val.
 
+cout<<distance(itup, itlow);// distance between 2 iterators in a set, you can't subtract them. Ans here: 4
+
 std::set<int, std::greater<int> > myInverseSortedSet;
 
 //vector initialization using static list of ints
