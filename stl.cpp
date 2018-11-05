@@ -107,6 +107,14 @@ auto result = std::minmax_element(X.begin(), X.end()); // returns pair<min itera
 std::cout << "min element at: " << (result.first - X.begin()) << '\n'; // prints 0 
 std::cout << "max element at: " << (result.second - X.begin()) << '\n';// prints 1
 
+/* nth_element is a partial sorting algorithm that rearranges elements in [first, last) such that:
+1. The element pointed at by nth is changed to whatever element would occur in that position if [first, last) were sorted.
+2. All of the elements before this new nth element are less than or equal to the elements after the new nth element.*/
+                                                                                              
+vector<int> v{5, 6, 4, 3, 2, 6, 7, 9, 3};
+nth_element(v.begin(), v.begin() + v.size()/2, v.end());
+cout << "The median is " << v[v.size()/2] << '\n';// prints 5
+
 void some_function(vector< int > v) { // Never do it : creates a copy of v
 // ...
 }
