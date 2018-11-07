@@ -64,6 +64,7 @@ bool leafSimilar(TreeNode* root1, TreeNode* root2) {
 
 /* Given an array nums, we call (i, j) an important reverse pair if i < j and nums[i] > 2*nums[j].
 You need to return the number of important reverse pairs in the given array.*/
+// call using mergesort(nums.begin(), nums.end())
   int mergesort(vector<int>::iterator begin, vector<int>::iterator end) {
     if(end-begin<=1) return 0;
     vector<int>::iterator mid = begin+(end-begin)/2;
@@ -77,10 +78,4 @@ You need to return the number of important reverse pairs in the given array.*/
     inplace_merge(begin, mid, end);
     return cnt;  
 }
-    
-
-public:
-    int reversePairs(vector<int>& nums) {
-        int n=nums.size();
-        return mergesort(nums.begin(), nums.end());                        
-    }
+   
