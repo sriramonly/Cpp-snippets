@@ -59,3 +59,28 @@ bool leafSimilar(TreeNode* root1, TreeNode* root2) {
         s = max(s, ls+rs+root->val);
         return max(ls, rs)+root->val;
     }
+
+
+
+/* Given an array nums, we call (i, j) an important reverse pair if i < j and nums[i] > 2*nums[j].
+You need to return the number of important reverse pairs in the given array.*/
+  int mergesort(vector<int>::iterator begin, vector<int>::iterator end) {
+    if(end-begin<=1) return 0;
+    vector<int>::iterator mid = begin+(end-begin)/2;
+    int cnt=0;
+    cnt += mergesort(begin, mid);
+    cnt += mergesort(mid, end);
+    for(vector<int>::iterator it=begin, j=mid;it!=mid;it++) {
+        while(j!=end && (*it)/2.0 > *j) j++; 
+        cnt += j-mid; 
+    }
+    inplace_merge(begin, mid, end);
+    return cnt;  
+}
+    
+
+public:
+    int reversePairs(vector<int>& nums) {
+        int n=nums.size();
+        return mergesort(nums.begin(), nums.end());                        
+    }
